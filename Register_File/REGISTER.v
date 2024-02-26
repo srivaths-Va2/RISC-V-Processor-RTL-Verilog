@@ -15,11 +15,13 @@ module REGISTER (
     input[4:0] register_write_addr,
     input r_or_w,                           // for READ, r_or_w = 1 and for WRITE, r_or_w = 0
     input[31:0] write_reg_val,
-    output[31:0] read_reg_value
+    output reg[31:0] read_reg_value
     //output[31:0] write_reg_value
 );
 
     reg[31:0] risc_v_memory_reg[31:0];       // intiialising the RISC-V processor memory with 32 registers each of 32 bits wide
+
+    //reg arr_idx = 1'dregister_write_addr;
 
     // initializing the processor with random values upon reset assertion. Kept the values to 32'h0
     always@(posedge reset)
@@ -62,13 +64,46 @@ module REGISTER (
         // upon read operation, the data to be read will be outputted
         if(r_or_w == 1)
             begin
-                assign read_reg_value = risc_v_memory_reg[register_read_addr];
+                read_reg_value <= risc_v_memory_reg[register_read_addr];
             end
         
         // upon write operation, the data to be written is written to corresponding register
         else if(r_or_w == 0)
             begin
-                assign risc_v_memory_reg[register_write_addr] = reg_write_val;
+                case(register_write_addr)
+                    5'b00000 : risc_v_memory_reg[0] = write_reg_val;
+                    5'b00001 : risc_v_memory_reg[1] = write_reg_val;
+                    5'b00010 : risc_v_memory_reg[2] = write_reg_val;
+                    5'b00011 : risc_v_memory_reg[3] = write_reg_val;
+                    5'b00100 : risc_v_memory_reg[4] = write_reg_val;
+                    5'b00101 : risc_v_memory_reg[5] = write_reg_val;
+                    5'b00110 : risc_v_memory_reg[6] = write_reg_val;
+                    5'b00111 : risc_v_memory_reg[7] = write_reg_val;
+                    5'b01000 : risc_v_memory_reg[8] = write_reg_val;
+                    5'b01001 : risc_v_memory_reg[9] = write_reg_val;
+                    5'b01010 : risc_v_memory_reg[10] = write_reg_val;
+                    5'b01011 : risc_v_memory_reg[11] = write_reg_val;
+                    5'b01100 : risc_v_memory_reg[12] = write_reg_val;
+                    5'b01101 : risc_v_memory_reg[13] = write_reg_val;
+                    5'b01110 : risc_v_memory_reg[14] = write_reg_val;
+                    5'b01111 : risc_v_memory_reg[15] = write_reg_val;
+                    5'b10000 : risc_v_memory_reg[16] = write_reg_val;
+                    5'b10001 : risc_v_memory_reg[17] = write_reg_val;
+                    5'b10010 : risc_v_memory_reg[18] = write_reg_val;
+                    5'b10011 : risc_v_memory_reg[19] = write_reg_val;
+                    5'b10100 : risc_v_memory_reg[20] = write_reg_val;
+                    5'b10101 : risc_v_memory_reg[21] = write_reg_val;
+                    5'b10110 : risc_v_memory_reg[22] = write_reg_val;
+                    5'b10111 : risc_v_memory_reg[23] = write_reg_val;
+                    5'b11000 : risc_v_memory_reg[24] = write_reg_val;
+                    5'b11001 : risc_v_memory_reg[25] = write_reg_val;
+                    5'b11010 : risc_v_memory_reg[26] = write_reg_val;
+                    5'b11011 : risc_v_memory_reg[27] = write_reg_val;
+                    5'b11100 : risc_v_memory_reg[28] = write_reg_val;
+                    5'b11101 : risc_v_memory_reg[29] = write_reg_val;
+                    5'b11110 : risc_v_memory_reg[30] = write_reg_val;
+                    5'b11111 : risc_v_memory_reg[31] = write_reg_val;
+                endcase
             end
 
     
