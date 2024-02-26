@@ -1,5 +1,5 @@
 $date
-	Sun Feb 25 11:54:59 2024
+	Mon Feb 26 16:01:36 2024
 $end
 $version
 	Icarus Verilog
@@ -9,15 +9,15 @@ $timescale
 $end
 $scope module ALU_tb $end
 $var wire 1 ! zero_flag $end
-$var wire 8 " alu_result [7:0] $end
+$var wire 32 " alu_result [31:0] $end
 $var reg 4 # alu_ctrl [3:0] $end
-$var reg 8 $ in1 [7:0] $end
-$var reg 8 % in2 [7:0] $end
+$var reg 32 $ in1 [31:0] $end
+$var reg 32 % in2 [31:0] $end
 $scope module alu $end
 $var wire 4 & alu_ctrl [3:0] $end
-$var wire 8 ' in1 [7:0] $end
-$var wire 8 ( in2 [7:0] $end
-$var reg 8 ) alu_result [7:0] $end
+$var wire 32 ' in1 [31:0] $end
+$var wire 32 ( in2 [31:0] $end
+$var reg 32 ) alu_result [31:0] $end
 $var reg 1 ! zero_flag $end
 $upscope $end
 $upscope $end
@@ -48,13 +48,13 @@ b1011 )
 b10 #
 b10 &
 #60
-b1000000 "
-b1000000 )
+b101000000 "
+b101000000 )
 b11 #
 b11 &
 #80
-b11111111 "
-b11111111 )
+b11111111111111111111111111111111 "
+b11111111111111111111111111111111 )
 b100 #
 b100 &
 #100

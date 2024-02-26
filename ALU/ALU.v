@@ -17,9 +17,9 @@ The ALU comprises of the following function table
 */
 
 module ALU (
-    input[7:0] in1, in2,
+    input[31:0] in1, in2,
     input[3:0] alu_ctrl,
-    output reg[7:0] alu_result,
+    output reg[31:0] alu_result,
     output reg zero_flag
 
 );
