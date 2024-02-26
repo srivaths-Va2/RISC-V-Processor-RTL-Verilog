@@ -4,13 +4,15 @@
 module REGISTER_tb;
 reg clk;
 reg reset;
-reg[4:0] register_read_addr;
+reg[4:0] register_read_addr_1;
+reg[4:0] register_read_addr_2;
 reg[4:0] register_write_addr;
 reg r_or_w;
 reg[31:0] write_reg_val;
-wire[31:0] read_reg_value;
+wire[31:0] read_reg_value_1;
+wire[31:0] read_reg_value_2;
 
-REGISTER register(clk, reset, register_read_addr, register_write_addr, r_or_w, write_reg_val, read_reg_value);
+REGISTER register(clk, reset, register_read_addr_1, register_read_addr_1, register_write_addr, r_or_w, write_reg_val, read_reg_value_1, read_reg_value_2);
 
 // block to intialise and run the clock
 initial
@@ -26,7 +28,8 @@ end
 initial
 begin
   reset = 1'b0;
-  register_read_addr = 5'b0;
+  register_read_addr_1 = 5'b0;
+  register_read_addr_2 = 5'b0;
   register_write_addr = 5'b0;
   r_or_w = 1'b0;
   write_reg_val = 32'b0;
@@ -41,16 +44,16 @@ begin
   reset = 1;
   #20;
 
-  reset = 0; register_read_addr = 5'b00000; register_write_addr = 5'b00100; r_or_w = 1'b0; write_reg_val = 32'b010010;
+  reset = 0; register_read_addr_1 = 5'b00000; register_read_addr_2 = 5'b00000; register_write_addr = 5'b00100; r_or_w = 1'b0; write_reg_val = 32'b010010;
   #20;
 
-  reset = 0; register_read_addr = 5'b00000; register_write_addr = 5'b10100; r_or_w = 1'b0; write_reg_val = 32'b10;
+  reset = 0; register_read_addr_1 = 5'b00000; register_read_addr_2 = 5'b00000; register_write_addr = 5'b10100; r_or_w = 1'b0; write_reg_val = 32'b10;
   #20;
 
-  reset = 0; register_read_addr = 5'b00000; register_write_addr = 5'b00101; r_or_w = 1'b0; write_reg_val = 32'b001010;
+  reset = 0; register_read_addr_1 = 5'b00000; register_read_addr_2 = 5'b00000; register_write_addr = 5'b00101; r_or_w = 1'b0; write_reg_val = 32'b001010;
   #20;
 
-  reset = 0; register_read_addr = 5'b00101; register_write_addr = 5'b00000; r_or_w = 1'b1; write_reg_val = 32'b0;
+  reset = 0; register_read_addr_1 = 5'b00101; register_read_addr_2 = 5'b10100; register_write_addr = 5'b00000; r_or_w = 1'b1; write_reg_val = 32'b0;
   #20;
 
   $display("Test Complete!");

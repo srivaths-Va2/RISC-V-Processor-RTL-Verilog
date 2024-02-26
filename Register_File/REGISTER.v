@@ -11,11 +11,13 @@ Functions covered
 
 module REGISTER (
     input clk, reset,
-    input[4:0] register_read_addr,
+    input[4:0] register_read_addr_1,
+    input[4:0] register_read_addr_2,
     input[4:0] register_write_addr,
     input r_or_w,                           // for READ, r_or_w = 1 and for WRITE, r_or_w = 0
     input[31:0] write_reg_val,
-    output reg[31:0] read_reg_value
+    output reg[31:0] read_reg_value_1,
+    output reg[31:0] read_reg_value_2
     //output[31:0] write_reg_value
 );
 
@@ -64,7 +66,8 @@ module REGISTER (
         // upon read operation, the data to be read will be outputted
         if(r_or_w == 1)
             begin
-                read_reg_value <= risc_v_memory_reg[register_read_addr];
+                read_reg_value_1 <= risc_v_memory_reg[register_read_addr_1];
+                read_reg_value_2 <= risc_v_memory_reg[register_read_addr_2];
             end
         
         // upon write operation, the data to be written is written to corresponding register

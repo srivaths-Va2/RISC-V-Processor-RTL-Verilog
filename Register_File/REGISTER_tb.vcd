@@ -1,5 +1,5 @@
 $date
-	Mon Feb 26 15:44:17 2024
+	Mon Feb 26 19:43:31 2024
 $end
 $version
 	Icarus Verilog
@@ -8,21 +8,25 @@ $timescale
 	1ns
 $end
 $scope module REGISTER_tb $end
-$var wire 32 ! read_reg_value [31:0] $end
-$var reg 1 " clk $end
-$var reg 1 # r_or_w $end
-$var reg 5 $ register_read_addr [4:0] $end
-$var reg 5 % register_write_addr [4:0] $end
-$var reg 1 & reset $end
-$var reg 32 ' write_reg_val [31:0] $end
+$var wire 32 ! read_reg_value_2 [31:0] $end
+$var wire 32 " read_reg_value_1 [31:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ r_or_w $end
+$var reg 5 % register_read_addr_1 [4:0] $end
+$var reg 5 & register_read_addr_2 [4:0] $end
+$var reg 5 ' register_write_addr [4:0] $end
+$var reg 1 ( reset $end
+$var reg 32 ) write_reg_val [31:0] $end
 $scope module register $end
-$var wire 1 " clk $end
-$var wire 1 # r_or_w $end
-$var wire 5 ( register_read_addr [4:0] $end
-$var wire 5 ) register_write_addr [4:0] $end
-$var wire 1 & reset $end
-$var wire 32 * write_reg_val [31:0] $end
-$var reg 32 + read_reg_value [31:0] $end
+$var wire 1 # clk $end
+$var wire 1 $ r_or_w $end
+$var wire 5 * register_read_addr_1 [4:0] $end
+$var wire 5 + register_read_addr_2 [4:0] $end
+$var wire 5 , register_write_addr [4:0] $end
+$var wire 1 ( reset $end
+$var wire 32 - write_reg_val [31:0] $end
+$var reg 32 . read_reg_value_1 [31:0] $end
+$var reg 32 / read_reg_value_2 [31:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -31,57 +35,65 @@ $dumpall
 $end
 #0
 $dumpvars
-bx +
+bx /
+bx .
+b0 -
+b0 ,
+b0 +
 b0 *
 b0 )
-b0 (
+1(
 b0 '
-1&
+b0 &
 b0 %
-b0 $
+0$
 0#
-0"
+bx "
 bx !
 $end
 #10
-1"
-#20
-0"
-b10010 '
-b10010 *
-b100 %
-b100 )
-0&
-#30
-1"
-#40
-0"
-b10 '
-b10 *
-b10100 %
-b10100 )
-#50
-1"
-#60
-0"
-b1010 '
-b1010 *
-b101 %
-b101 )
-#70
-1"
-#80
-0"
-b0 '
-b0 *
 1#
-b0 %
+#20
+0#
+b10010 )
+b10010 -
+b100 '
+b100 ,
+0(
+#30
+1#
+#40
+0#
+b10 )
+b10 -
+b10100 '
+b10100 ,
+#50
+1#
+#60
+0#
+b1010 )
+b1010 -
+b101 '
+b101 ,
+#70
+1#
+#80
+0#
 b0 )
-b101 $
-b101 (
+b0 -
+1$
+b0 '
+b0 ,
+b10100 &
+b101 %
+b101 *
+b101 +
 #90
 b1010 !
-b1010 +
-1"
+b1010 /
+b1010 "
+b1010 .
+1#
 #100
-0"
+0#
