@@ -14,19 +14,20 @@ module DATAPATH (
     input[4:0] mem_write_addr,
     input[3:0] alu_ctrl,
     input r_or_w,
+    input[31:0] write_reg_val,
     output zero_flag
 );
 
     // Declaring the intermediate wires carrying data
     wire[31:0] read_val_1;
     wire[31:0] read_val_2;
-    wire[31:0] write_val;
+    //wire[31:0] write_val;
     
 
     // instantiating the register file
-    REGISTER register(clk, reset, mem_read_addr_1, mem_read_addr_2, mem_write_addr, r_or_w, write_val, read_val_1, read_val_2);
+    REGISTER register(clk, reset, mem_read_addr_1, mem_read_addr_2, mem_write_addr, r_or_w, write_reg_val, read_val_1, read_val_2);
 
     // instantiating the ALU
-    ALU alu(read_val_1, read_val_2, alu_ctrl, write_val, zero_flag);
+    ALU alu(read_val_1, read_val_2, alu_ctrl, write_reg_val, zero_flag);
 
 endmodule

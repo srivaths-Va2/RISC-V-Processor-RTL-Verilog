@@ -1,0 +1,144 @@
+$date
+	Wed Feb 28 22:34:10 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module DATAPATH_tb $end
+$var wire 1 ! zero_flag $end
+$var reg 4 " alu_ctrl [3:0] $end
+$var reg 1 # clk $end
+$var reg 5 $ mem_read_addr_1 [4:0] $end
+$var reg 5 % mem_read_addr_2 [4:0] $end
+$var reg 5 & mem_write_addr [4:0] $end
+$var reg 1 ' r_or_w $end
+$var reg 1 ( reset $end
+$var reg 32 ) write_reg_val [31:0] $end
+$scope module datapath $end
+$var wire 4 * alu_ctrl [3:0] $end
+$var wire 1 # clk $end
+$var wire 5 + mem_read_addr_1 [4:0] $end
+$var wire 5 , mem_read_addr_2 [4:0] $end
+$var wire 5 - mem_write_addr [4:0] $end
+$var wire 1 ' r_or_w $end
+$var wire 1 ( reset $end
+$var wire 32 . write_reg_val [31:0] $end
+$var wire 1 ! zero_flag $end
+$var wire 32 / read_val_2 [31:0] $end
+$var wire 32 0 read_val_1 [31:0] $end
+$scope module alu $end
+$var wire 4 1 alu_ctrl [3:0] $end
+$var wire 32 2 in2 [31:0] $end
+$var wire 32 3 in1 [31:0] $end
+$var reg 32 4 alu_result [31:0] $end
+$var reg 1 ! zero_flag $end
+$upscope $end
+$scope module register $end
+$var wire 1 # clk $end
+$var wire 1 ' r_or_w $end
+$var wire 5 5 register_read_addr_1 [4:0] $end
+$var wire 5 6 register_read_addr_2 [4:0] $end
+$var wire 5 7 register_write_addr [4:0] $end
+$var wire 1 ( reset $end
+$var wire 32 8 write_reg_val [31:0] $end
+$var reg 32 9 read_reg_value_1 [31:0] $end
+$var reg 32 : read_reg_value_2 [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx :
+bx 9
+bx 8
+b0 7
+b0 6
+b0 5
+bx 4
+bx 3
+bx 2
+b0 1
+bx 0
+bx /
+bx .
+b0 -
+b0 ,
+b0 +
+b0 *
+b0 )
+1(
+0'
+b0 &
+b0 %
+b0 $
+0#
+b0 "
+0!
+$end
+#10
+1#
+#20
+0#
+b100 &
+b100 -
+b100 7
+0(
+#30
+1#
+#40
+0#
+b11 "
+b11 *
+b11 1
+b10100 &
+b10100 -
+b10100 7
+#50
+1#
+#60
+1!
+b0 .
+b0 8
+b0 4
+0#
+b1000 "
+b1000 *
+b1000 1
+b101 &
+b101 -
+b101 7
+#70
+1#
+#80
+0!
+bx .
+bx 8
+bx 4
+0#
+1'
+b10 "
+b10 *
+b10 1
+b0 &
+b0 -
+b0 7
+b10100 %
+b10100 ,
+b10100 6
+b101 $
+b101 +
+b101 5
+#90
+b0 0
+b0 3
+b0 9
+1#
+#100
+0#
