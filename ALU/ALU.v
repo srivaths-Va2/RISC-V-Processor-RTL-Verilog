@@ -4,15 +4,16 @@ The module implements the ALU for the processor.
 The ALU comprises of the following function table
 
     Function        |       alu_ctrl
-    BITWISE AND             0000
-    BITWISE OR              0001
-    ADD                     0010
-    SHIFT LEFT              0011
-    SUB                     0100
-    SHIFT RIGHT             0101
-    MULTIPLY                0110
-    BITWISE XOR             0111
-    SET ON LESS THAN        1000
+    BITWISE AND                 0000
+    BITWISE OR                  0001
+    ADD                         0010
+    SHIFT LEFT                  0011
+    SUB                         0100
+    SHIFT RIGHT                 0101
+    MULTIPLY                    0110
+    BITWISE XOR                 0111
+    SET ON LESS THAN            1000
+    SHIFT RIGHT ARITHEMETIC     1001
 
 */
 
@@ -40,7 +41,8 @@ module ALU (
                         alu_result = 1;
                     else
                         alu_result = 0;
-                end 
+                end
+                4'b1001 : alu_result = in1 >>> in2; 
             endcase
 
         if(alu_result == 0)

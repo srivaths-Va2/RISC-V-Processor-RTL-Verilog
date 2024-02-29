@@ -41,6 +41,9 @@ initial begin
     in1 = 32'b101; in2 = 32'b110; alu_ctrl = 4'b1000;
     #20;
 
+    in1 = 32'b101; in2 = 32'b110; alu_ctrl = 4'b1001;
+    #20;
+
     $display("Test complete!");
 
 end
