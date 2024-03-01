@@ -51,6 +51,14 @@ begin
     instruction_word = 32'b000011110101_01101_011_01101_0000011;
     #20;
 
+    // U-type instructions
+    instruction_word = 32'b00001111010101101011_01101_0110111;
+    #20;
+
+    // S-type instructions
+    instruction_word = 32'b0000111_10101_01101_010_01101_0100011;
+    #20;
+
     $display("Test Complete");
     $finish;
 end

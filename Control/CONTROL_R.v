@@ -101,6 +101,23 @@ module CONTROL_R(
                     endcase
 
                 end
+            
+            // coding for U-type instructions
+            else if(instruction_word[6:0] == 7'b0110111)
+                begin
+                    inst_type = 3'b001;
+                    //alu_ctrl = 4'bxxxx;
+                    alu_ctrl = 4'b0011;
+                end
+            
+            // coding for S-type instructions
+            else if(instruction_word[6:0] == 7'b0100011)
+                begin
+                    inst_type = 3'b100;
+                    
+                end
+
+
                 
         end
 
