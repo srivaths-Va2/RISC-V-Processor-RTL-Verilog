@@ -6,6 +6,7 @@ reg[31:0] instruction_word;
 wire[3:0] alu_ctrl;
 wire shamt_en;
 wire[2:0] branch_ctrl;
+wire jump_ctrl;
 wire reg_write;
 wire[2:0] inst_type;
 
@@ -14,6 +15,7 @@ CONTROL_R control_unit (
     .alu_ctrl(alu_ctrl),
     .shamt_en(shamt_en),
     .branch_ctrl(branch_ctrl),
+    .jump_ctrl(jump_ctrl),
     .reg_write(reg_write),
     .inst_type(inst_type)
 );
@@ -66,6 +68,10 @@ begin
     #20;
 
     instruction_word = 32'b0000111_10101_01101_100_01101_1100011;
+    #20;
+
+    // J-type instructions
+    instruction_word = 32'b0000111_10101_01101_111_01101_1101111;
     #20;
 
     $display("Test Complete");

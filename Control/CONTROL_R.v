@@ -29,6 +29,7 @@ module CONTROL_R(
     output reg[3:0] alu_ctrl,
     output reg shamt_en,        // control strobe for shift amount for I-type instructions
     output reg[2:0] branch_ctrl, 
+    output reg jump_ctrl,       // control strobe to indicate JUMP instruction
     output reg reg_write,
     output reg[2:0] inst_type
 );
@@ -40,6 +41,7 @@ module CONTROL_R(
             alu_ctrl = 4'bxxxx;
             shamt_en = 1'bx;
             branch_ctrl = 3'bxxx;
+            jump_ctrl = 1'bx;
 
             //coding for R type instructions
             if(instruction_word[6:0] == 7'b0110011) begin
@@ -138,6 +140,14 @@ module CONTROL_R(
                         3'b111 : branch_ctrl = 3'b101;      // BGEU (Branch if Greater than (unsigned comparison))
                     endcase
 
+
+                end
+            
+            // coding for J type instructions
+            else if(instruction_word[6:0] == 7'b1101111)
+                begin
+                    inst_type = 3'b010;
+                    jump_ctrl = 1'b1;
 
                 end
 
