@@ -1,0 +1,63 @@
+$date
+	Fri Mar 01 23:21:46 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module INST_S_DEC_tb $end
+$var wire 5 ! rs2 [4:0] $end
+$var wire 5 " rs1 [4:0] $end
+$var wire 7 # imm_MSB [6:0] $end
+$var wire 5 $ imm_LSB [4:0] $end
+$var reg 32 % instruction_word [31:0] $end
+$scope module S_Decoder $end
+$var wire 32 & instruction_word [31:0] $end
+$var reg 5 ' imm_LSB [4:0] $end
+$var reg 7 ( imm_MSB [6:0] $end
+$var reg 5 ) rs1 [4:0] $end
+$var reg 5 * rs2 [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 *
+b1101 )
+b111 (
+b11101 '
+b1110000001101010111010100011 &
+b1110000001101010111010100011 %
+b11101 $
+b111 #
+b1101 "
+b0 !
+$end
+#20
+b1111 $
+b1111 '
+b1100 "
+b1100 )
+b10101 !
+b10101 *
+b100101 #
+b100101 (
+b1001011010101100010011110100011 %
+b1001011010101100010011110100011 &
+#40
+b1 $
+b1 '
+b111 "
+b111 )
+b1011 !
+b1011 *
+b1000100 #
+b1000100 (
+b10001000101100111010000010100011 %
+b10001000101100111010000010100011 &
+#60
