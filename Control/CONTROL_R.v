@@ -28,12 +28,19 @@ module CONTROL_R(
     input[31:0] instruction_word,
     output reg[3:0] alu_ctrl,
     output reg shamt_en,        // control strobe for shift amount for I-type instructions
+    output reg[2:0] branch_ctrl, 
     output reg reg_write,
     output reg[2:0] inst_type
 );
     
     always@(instruction_word)
         begin
+            
+            // default initialization of output control signals to xxxx
+            alu_ctrl = 4'bxxxx;
+            shamt_en = 1'bx;
+            branch_ctrl = 3'bxxx;
+
             //coding for R type instructions
             if(instruction_word[6:0] == 7'b0110011) begin
                 reg_write = 1;
@@ -113,8 +120,25 @@ module CONTROL_R(
             // coding for S-type instructions
             else if(instruction_word[6:0] == 7'b0100011)
                 begin
-                    inst_type = 3'b100;
-                    
+                    inst_type = 3'b100;    
+                end
+            
+            // coding for B-type instructions
+            else if(instruction_word[6:0] == 7'b1100011)
+                begin
+                    inst_type = 3'b101;
+                    branch_ctrl = 3'bxxx;       // initialise to default for every instruction
+
+                    case(instruction_word[14:12])
+                        3'b000 : branch_ctrl = 3'b000;      // BEQ  (Branch if Equal)
+                        3'b001 : branch_ctrl = 3'b001;      // BNE  (Branch if Not Equal)
+                        3'b100 : branch_ctrl = 3'b010;      // BLT  (Branch if Less Than)
+                        3'b101 : branch_ctrl = 3'b011;      // BGE  (Branch if Greater than)
+                        3'b110 : branch_ctrl = 3'b100;      // BLTU (Branch if Less than (unsigned comparison))
+                        3'b111 : branch_ctrl = 3'b101;      // BGEU (Branch if Greater than (unsigned comparison))
+                    endcase
+
+
                 end
 
 

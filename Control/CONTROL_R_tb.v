@@ -5,6 +5,7 @@ module CONTROL_R_tb;
 reg[31:0] instruction_word;
 wire[3:0] alu_ctrl;
 wire shamt_en;
+wire[2:0] branch_ctrl;
 wire reg_write;
 wire[2:0] inst_type;
 
@@ -12,6 +13,7 @@ CONTROL_R control_unit (
     .instruction_word(instruction_word),
     .alu_ctrl(alu_ctrl),
     .shamt_en(shamt_en),
+    .branch_ctrl(branch_ctrl),
     .reg_write(reg_write),
     .inst_type(inst_type)
 );
@@ -57,6 +59,13 @@ begin
 
     // S-type instructions
     instruction_word = 32'b0000111_10101_01101_010_01101_0100011;
+    #20;
+
+    // B-type instructions
+    instruction_word = 32'b0000111_10101_01101_111_01101_1100011;
+    #20;
+
+    instruction_word = 32'b0000111_10101_01101_100_01101_1100011;
     #20;
 
     $display("Test Complete");
