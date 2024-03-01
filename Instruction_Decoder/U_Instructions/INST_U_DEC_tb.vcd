@@ -1,0 +1,40 @@
+$date
+	Fri Mar 01 23:02:47 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module INST_U_DEC_tb $end
+$var wire 5 ! rd [4:0] $end
+$var wire 20 " imm [19:0] $end
+$var reg 32 # instruction_word [31:0] $end
+$scope module R_Decoder $end
+$var wire 32 $ instruction_word [31:0] $end
+$var reg 20 % imm [19:0] $end
+$var reg 5 & rd [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1101 &
+b1111010101101011 %
+b1111010101101011011010110111 $
+b1111010101101011011010110111 #
+b1111010101101011 "
+b1101 !
+$end
+#20
+b10101 !
+b10101 &
+b10001011010101001001 "
+b10001011010101001001 %
+b10001011010101001001101010110111 #
+b10001011010101001001101010110111 $
+#40

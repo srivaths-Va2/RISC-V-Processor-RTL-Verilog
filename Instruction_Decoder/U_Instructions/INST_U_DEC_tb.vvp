@@ -1,0 +1,52 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000021092745b10 .scope module, "INST_U_DEC_tb" "INST_U_DEC_tb" 2 4;
+ .timescale -9 -9;
+v000002109286ba70_0 .net "imm", 19 0, v0000021092745e30_0;  1 drivers
+v000002109286bb10_0 .var "instruction_word", 31 0;
+v000002109286bbb0_0 .net "rd", 4 0, v0000021092745ed0_0;  1 drivers
+S_0000021092745ca0 .scope module, "R_Decoder" "INST_U_DEC" 2 10, 3 6 0, S_0000021092745b10;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 32 "instruction_word";
+    .port_info 1 /OUTPUT 20 "imm";
+    .port_info 2 /OUTPUT 5 "rd";
+v0000021092745e30_0 .var "imm", 19 0;
+v0000021092712b90_0 .net "instruction_word", 31 0, v000002109286bb10_0;  1 drivers
+v0000021092745ed0_0 .var "rd", 4 0;
+E_000002109286c230 .event anyedge, v0000021092712b90_0;
+    .scope S_0000021092745ca0;
+T_0 ;
+    %wait E_000002109286c230;
+    %load/vec4 v0000021092712b90_0;
+    %parti/s 20, 12, 5;
+    %store/vec4 v0000021092745e30_0, 0, 20;
+    %load/vec4 v0000021092712b90_0;
+    %parti/s 5, 7, 4;
+    %store/vec4 v0000021092745ed0_0, 0, 5;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0000021092745b10;
+T_1 ;
+    %vpi_call 2 14 "$dumpfile", "INST_U_DEC_tb.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000021092745b10 {0 0 0};
+    %pushi/vec4 257341111, 0, 32;
+    %store/vec4 v000002109286bb10_0, 0, 32;
+    %delay 20, 0;
+    %pushi/vec4 2337577655, 0, 32;
+    %store/vec4 v000002109286bb10_0, 0, 32;
+    %delay 20, 0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "INST_U_DEC_tb.v";
+    "./INST_U_DEC.v";
