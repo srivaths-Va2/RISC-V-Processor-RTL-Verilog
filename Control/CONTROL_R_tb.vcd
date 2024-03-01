@@ -1,0 +1,42 @@
+$date
+	Fri Mar 01 10:42:45 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module CONTROL_R_tb $end
+$var wire 1 ! reg_write $end
+$var wire 4 " alu_ctrl [3:0] $end
+$var reg 32 # instruction_word [31:0] $end
+$scope module control_unit $end
+$var wire 32 $ instruction_word [31:0] $end
+$var reg 4 % alu_ctrl [3:0] $end
+$var reg 1 ! reg_write $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10 %
+b10010101000001010110011 $
+b10010101000001010110011 #
+b10 "
+1!
+$end
+#20
+b100 "
+b100 %
+b1000000010110101000001100110011 #
+b1000000010110101000001100110011 $
+#40
+b11 "
+b11 %
+b10010101001001010110011 #
+b10010101001001010110011 $
+#60
