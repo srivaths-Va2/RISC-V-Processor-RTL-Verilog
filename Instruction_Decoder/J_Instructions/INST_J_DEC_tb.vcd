@@ -1,0 +1,54 @@
+$date
+	Sat Mar 02 08:11:43 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module INST_J_DEC_tb $end
+$var wire 5 ! rd [4:0] $end
+$var wire 20 " imm [19:0] $end
+$var reg 32 # instruction_word [31:0] $end
+$scope module J_Decoder $end
+$var wire 32 $ instruction_word [31:0] $end
+$var reg 20 % imm [19:0] $end
+$var reg 5 & rd [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1101 &
+b1111110101101110 %
+b1111110101101110011011101111 $
+b1111110101101110011011101111 #
+b1111110101101110 "
+b1101 !
+$end
+#20
+b11111 !
+b11111 &
+b1001110010101101111 "
+b1001110010101101111 %
+b1001110010101101111111111101111 #
+b1001110010101101111111111101111 $
+#40
+b101 !
+b101 &
+b1111010101101111 "
+b1111010101101111 %
+b1111010101101111001011101111 #
+b1111010101101111001011101111 $
+#60
+b100 !
+b100 &
+b11001110010101001111 "
+b11001110010101001111 %
+b11001110010101001111001001101111 #
+b11001110010101001111001001101111 $
+#80
