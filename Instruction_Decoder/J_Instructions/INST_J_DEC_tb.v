@@ -3,10 +3,10 @@
 
 module INST_J_DEC_tb;
 reg [31:0] instruction_word;
-wire[19:0] imm;
+wire[19:0] imm_J;
 wire[4:0] rd;
 
-INST_J_DEC J_Decoder(instruction_word, imm, rd);
+INST_J_DEC J_Decoder(instruction_word, imm_J, rd);
 
 initial
     begin

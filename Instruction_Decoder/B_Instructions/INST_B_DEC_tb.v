@@ -3,12 +3,12 @@
 
 module INST_B_DEC_tb;
 reg[31:0] instruction_word;
-wire[6:0] imm_MSB;
+wire[6:0] imm_B_MSB;
 wire[4:0] rs2;
 wire[4:0] rs1;
-wire[4:0] imm_LSB;
+wire[4:0] imm_B_LSB;
 
-INST_B_DEC B_Decoder(instruction_word, imm_MSB, rs2, rs1, imm_LSB);
+INST_B_DEC B_Decoder(instruction_word, imm_B_MSB, rs2, rs1, imm_B_LSB);
 
 initial
     begin

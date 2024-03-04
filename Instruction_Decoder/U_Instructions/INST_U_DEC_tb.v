@@ -3,11 +3,11 @@
 
 module INST_U_DEC_tb;
 reg[31:0] instruction_word;
-wire[19:0] imm;
+wire[19:0] imm_U;
 wire[4:0] rd;
 
 
-INST_U_DEC R_Decoder(instruction_word, imm, rd);
+INST_U_DEC R_Decoder(instruction_word, imm_U, rd);
 
 initial
     begin

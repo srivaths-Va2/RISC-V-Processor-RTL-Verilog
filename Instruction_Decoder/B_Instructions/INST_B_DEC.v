@@ -5,18 +5,18 @@ The module outputs the register addresses, MSB and LSB immediate values after de
 
 module INST_B_DEC (
     input[31:0] instruction_word,
-    output reg[6:0] imm_MSB,
+    output reg[6:0] imm_B_MSB,
     output reg[4:0] rs2,
     output reg[4:0] rs1,
-    output reg[4:0] imm_LSB
+    output reg[4:0] imm_B_LSB
 );
 
     always@(instruction_word)
         begin
-            imm_MSB = instruction_word[31:25];
+            imm_B_MSB = instruction_word[31:25];
             rs2 = instruction_word[24:20];
             rs1 = instruction_word[19:15];
-            imm_LSB = instruction_word[11:7];
+            imm_B_LSB = instruction_word[11:7];
         end
     
 endmodule
