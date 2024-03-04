@@ -1,0 +1,130 @@
+$date
+	Mon Mar 04 17:34:36 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module DECODER_tb $end
+$var wire 5 ! rs2 [4:0] $end
+$var wire 5 " rs1 [4:0] $end
+$var wire 5 # rd [4:0] $end
+$var wire 20 $ imm_U [19:0] $end
+$var wire 7 % imm_S_MSB [6:0] $end
+$var wire 5 & imm_S_LSB [4:0] $end
+$var wire 20 ' imm_J [19:0] $end
+$var wire 12 ( imm_I [11:0] $end
+$var wire 7 ) imm_B_MSB [6:0] $end
+$var wire 5 * imm_B_LSB [4:0] $end
+$var reg 32 + instruction_word [31:0] $end
+$scope module decoder $end
+$var wire 32 , instruction_word [31:0] $end
+$var reg 5 - imm_B_LSB [4:0] $end
+$var reg 7 . imm_B_MSB [6:0] $end
+$var reg 12 / imm_I [11:0] $end
+$var reg 20 0 imm_J [19:0] $end
+$var reg 5 1 imm_S_LSB [4:0] $end
+$var reg 7 2 imm_S_MSB [6:0] $end
+$var reg 20 3 imm_U [19:0] $end
+$var reg 5 4 rd [4:0] $end
+$var reg 5 5 rs1 [4:0] $end
+$var reg 5 6 rs2 [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1101 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+b111 .
+b1101 -
+b1111010101101111011011100011 ,
+b1111010101101111011011100011 +
+b1101 *
+b111 )
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+bx "
+b1101 !
+$end
+#20
+b111 #
+b111 4
+b10011 "
+b10011 5
+b1000001001 (
+b1000001001 /
+bx !
+bx 6
+bx *
+bx -
+bx )
+bx .
+b100000100110011000001110000011 +
+b100000100110011000001110000011 ,
+#40
+b1111110101101110 '
+b1111110101101110 0
+bx "
+bx 5
+b1101 #
+b1101 4
+bx (
+bx /
+b1111110101101110011011101111 +
+b1111110101101110011011101111 ,
+#60
+b10101 "
+b10101 5
+b100 !
+b100 6
+b101 #
+b101 4
+bx '
+bx 0
+b10010101000001010110011 +
+b10010101000001010110011 ,
+#80
+b11101 &
+b11101 1
+b111 %
+b111 2
+b1101 "
+b1101 5
+b0 !
+b0 6
+bx #
+bx 4
+b1110000001101010111010100011 +
+b1110000001101010111010100011 ,
+#100
+b1101 #
+b1101 4
+b1111010101101011 $
+b1111010101101011 3
+bx "
+bx 5
+bx !
+bx 6
+bx &
+bx 1
+bx %
+bx 2
+b1111010101101011011010110111 +
+b1111010101101011011010110111 ,
+#120
