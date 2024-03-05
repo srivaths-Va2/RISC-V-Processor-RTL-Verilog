@@ -1,0 +1,63 @@
+$date
+	Tue Mar 05 18:18:38 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module INST_MEMORY_tb $end
+$var wire 32 ! instruction_code [31:0] $end
+$var reg 32 " PC [31:0] $end
+$var reg 1 # reset $end
+$scope module inst_memory $end
+$var wire 32 $ PC [31:0] $end
+$var wire 32 % instruction_word [31:0] $end
+$var wire 1 # reset $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx %
+bx $
+1#
+bx "
+bx !
+$end
+#20
+b1 !
+b1 %
+b1 "
+b1 $
+0#
+#40
+b10 !
+b10 %
+b10 "
+b10 $
+#60
+b11 !
+b11 %
+b11 "
+b11 $
+#80
+b100 !
+b100 %
+b100 "
+b100 $
+#100
+b101 !
+b101 %
+b101 "
+b101 $
+#120
+b110 !
+b110 %
+b110 "
+b110 $
+#140
