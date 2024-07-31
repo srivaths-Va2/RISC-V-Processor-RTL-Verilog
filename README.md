@@ -15,13 +15,13 @@ The processor comprises of multiple components, which include
   
 | S.No |  ALU Operation  | alu_ctrl signal |
 |:-----|:---------------:|----------------:|
-| 1    |    BITWISE AND     |      0000      |
-| 2    |    BITWISE OR     |      0001      |
-| 3    |    ADD     |      0010      |
-| 4    |    SHIFT LEFT    |      0011      |
-| 5    |    SUB     |      0100      |
-| 6    |    SHIFT RIGHT     |      0101      |
-| 7    |    MULTIPLY     |      0110      |
-| 8    |    BITWISE XOR     |      0111      |
-| 9    |    SET ON LESS THAN      |      1000      |
-| 10    |    SHIFT RIGHT ARITHEMETIC     |      1001      |
+| 1 | BITWISE AND | 0000 |
+| 2 | BITWISE OR | 0001  |
+| 3 | ADD | 0010 |
+| 4 | SHIFT LEFT | 0011 |
+| 5 | SUB | 0100 |
+| 6 | SHIFT RIGHT | 0101 |
+| 7 | MULTIPLY | 0110 |
+| 8 | BITWISE XOR | 0111 |
+| 9 | SET ON LESS THAN | 1000 |
+| 10 | SHIFT RIGHT ARITHEMETIC | 1001 |
