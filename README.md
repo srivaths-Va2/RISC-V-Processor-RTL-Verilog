@@ -12,6 +12,7 @@ The processor comprises of multiple components, which include
 
 # Arithemetic Logic Unit
 <p> The ALU takes up two numbers and computes the output of a certain arithemetic or logic operation. The various operations that are supported include-
+  
 | Left |  Center  | Right |
 |:-----|:--------:|------:|
 | L0   | **bold** | $1600 |
