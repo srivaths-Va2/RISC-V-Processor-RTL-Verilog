@@ -10,7 +10,7 @@ The processor comprises of multiple components, which include
 + Instruction Fetch
 + Register files.
 
-# Arithemetic Logic Unit
+## Arithemetic Logic Unit
 <p> The ALU takes up two numbers and computes the output of a certain arithemetic or logic operation. The various operations that are supported include-
   
 | S.No |  ALU Operation  | alu_ctrl signal |
@@ -29,7 +29,7 @@ The processor comprises of multiple components, which include
 The alu_ctrl signal is an input signal that directs the ALU to perform a certain operation.
 The ALU unit also outputs a zero flag, that sets when the result upon computation is zero
 
-# Control Unit
+## Control Unit
 The module depicts the control unit of the processor. 
 The control unit takes in the opcode, funct7 and funct3 as the inputs and determines the control register write in 
 the IFU and the ALU control in the ALU for the proper execution of the instruction
@@ -103,4 +103,19 @@ the signal inst_type gives information of the encoding of the instruction.
 | 5 | 3'b100 | S |
 | 6 | 3'b101 | B |
 
+## Datapath Unit
+The Datapath unit is the core component of the digital system, that integrates the register files and the Arithmetic and Logic Units (ALU).
+It simply takes the addresses of the entries in memory that are to be computed, and uses the alu_ctrl signal to perform the required operation. It also takes an additional R/W input to indicate read from memory and write to memory.
 
+## Instruction Decoder
+The instruction decoder comprises of several submodules that decode the instruction code. Depending on the opcode, it classifies the instruction and retrieves the components of the instruction, which include the various operands, operators and other data. The master-decoder module combines these several submodules into one fully functional decoder
+
+## Instruction Fetch
+The instruction fetch unit retrieves the instructions from the instruction memory. It also updates the program counter incrementally by 1 unit to point to the next successive instruction.
+
+## Instruction Memory Unit
+The instruction memory unit comprises of the instructions to be executed in the near future. This component as of now is static with only 10 registers for testing porposes. Upon full fledged completion of the processor, the memory space of the processor would be increased and a bootloader program could be written in assembly to boot the processor upon startup. The bootloader program is to be stored in the code section of the instruction memory unit, which is to be protected from the user.
+
+## Register File
+The module covers the implementation of RISC-V processor internal registers. The ISA specifies 32 registers in the archutecture. The width of each register is 32 bits. Hence, we require 5 bits to address each register.
+The module supports both read and write operations on these registers.
