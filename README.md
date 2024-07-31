@@ -25,3 +25,6 @@ The processor comprises of multiple components, which include
 | 8 | BITWISE XOR | 0111 |
 | 9 | SET ON LESS THAN | 1000 |
 | 10 | SHIFT RIGHT ARITHEMETIC | 1001 |
+
+The alu_ctrl signal is an input signal that directs the ALU to perform a certain operation.
+The ALU unit also outputs a zero flag, that sets when the result upon computation is zero
