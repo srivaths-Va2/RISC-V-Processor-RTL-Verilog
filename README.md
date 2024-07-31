@@ -42,55 +42,17 @@ The module outputs control instructions for-
 + S-type instructions
 + B-type instructions
 
-The R-type instructions are used for operations that set a destination register rd to the result of an arithmetic, logical or shift operation applied to source registers rs1 and rs2. The instructions offered under the U-type instruction set include-
-+ add instruction
-+ and instruction
-+ or instruction
-+ sll instruction
-+ slt instruction
-+ sltu instruction
-+ sra instruction
-+ srl instruction
-+ sub instruction
-+ xor instruction
+The R-type instructions are used for operations that set a destination register rd to the result of an arithmetic, logical or shift operation applied to source registers rs1 and rs2.
 
-The U-Type format is used for instructions that use a 20-bit immediate operand and an rd destination register. The rd field contains an x register number to be set to a value that depends on the instruction. The instructions offered under the U-type instruction set include-
-+ lui instruction
-+ auipc instruction
+The U-Type format is used for instructions that use a 20-bit immediate operand and an rd destination register. The rd field contains an x register number to be set to a value that depends on the instruction.
 
-The J-type instruction format is used to encode the jal instruction with an immediate value that determines the jump target address. It is similar to the U-type, but the bits in the immediate operand are arranged in a different order. The instructions offered under the J-type instruction set include-
-+ jal instruction
+The J-type instruction format is used to encode the jal instruction with an immediate value that determines the jump target address. It is similar to the U-type, but the bits in the immediate operand are arranged in a different order. 
 
-The I-type instruction format is used to encode instructions with a signed 12-bit immediate operand with a range of [−2048..2047], an rd register, and an rs1 register. The instructions offered under the I-type instruction set include-
-+ addi instruction
-+ andi instruction
-+ jalr instruction
-+ lb instruction
-+ lbu instruction
-+ lh instruction
-+ lhu instruction
-+ lw instruction
-+ ori instruction
-+ slli instruction
-+ slti instruction
-+ sltiu instruction
-+ srai instruction
-+ srli instruction
-+ xori instruction
+The I-type instruction format is used to encode instructions with a signed 12-bit immediate operand with a range of [−2048..2047], an rd register, and an rs1 register.
 
-The S-type instruction format is used to encode instructions with a signed 12-bit immediate operand with a range of [−2048..2047], an rs1 register, and an rs2 register. The instructions offered under the S-type instruction set include-
-+ sb instruction
-+ sh instruction
-+ sw instruction
+The S-type instruction format is used to encode instructions with a signed 12-bit immediate operand with a range of [−2048..2047], an rs1 register, and an rs2 register.
 
-The B-type instruction format is used for branch instructions that require an even immediate value that is used to determine the branch target address as an offset from the current instruction’s address.The instructions offered under the B-type instruction set include-
-+ beq instruction
-+ bge instruction
-+ bgeu instruction
-+ blt instruction
-+ bltu instruction
-+ bne instruction
-
+The B-type instruction format is used for branch instructions that require an even immediate value that is used to determine the branch target address as an offset from the current instruction’s address.
 
 the signal inst_type gives information of the encoding of the instruction. 
 
